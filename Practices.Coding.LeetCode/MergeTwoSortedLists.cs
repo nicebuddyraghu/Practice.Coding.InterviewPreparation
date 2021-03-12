@@ -15,9 +15,9 @@ namespace Practices.Coding.LeetCode
          */
 
 
-        public class Solution
+        internal class Solution
         {
-            public class ListNode
+            internal class ListNode
             {
                 public int val;
                 public ListNode next;
@@ -27,8 +27,8 @@ namespace Practices.Coding.LeetCode
                     this.next = next;
                 }
             }
- 
-            public ListNode MergeTwoLists(ListNode l1, ListNode l2)
+
+            internal ListNode MergeTwoLists(ListNode l1, ListNode l2)
             {
                 System.Collections.Generic.Stack<ListNode> nodestack = new System.Collections.Generic.Stack<ListNode>();
 

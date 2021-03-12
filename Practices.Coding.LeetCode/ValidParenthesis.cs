@@ -13,10 +13,9 @@ namespace Practices.Coding.LeetCode
          * https://leetcode.com/problems/valid-parentheses/
          * 
          */
-
-        public class Solution
+        internal class Solution
         {
-            public bool IsValid(string s)
+            internal bool IsValid(string s)
             {
 
                 if (String.IsNullOrEmpty(s))

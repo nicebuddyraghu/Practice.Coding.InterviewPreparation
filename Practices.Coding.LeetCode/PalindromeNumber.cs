@@ -9,11 +9,11 @@ namespace Practices.Coding.LeetCode
     /*
      * https://leetcode.com/problems/palindrome-number/
      */
-    public class PalindromeNumber
+    internal class PalindromeNumber
     {
-        public class Solution
+        internal class Solution
         {
-            public bool IsPalindrome(int x)
+            internal bool IsPalindrome(int x)
             {
                 int reverse = Reverse(x);
                 if (x < 0)
@@ -23,9 +23,9 @@ namespace Practices.Coding.LeetCode
                     return true;
                 else
                     return false;
-            }  
+            }
 
-            public int Reverse(int x)
+            internal int Reverse(int x)
             {
                 bool isNegativeNumber = false;
 

@@ -12,9 +12,9 @@ namespace Practices.Coding.LeetCode
          * https://leetcode.com/problems/longest-common-prefix/
          */
 
-        public class Solution
+        internal class Solution
         {
-            public string LongestCommonPrefix(string[] strs)
+            internal string LongestCommonPrefix(string[] strs)
             {
 
                 int prefixStartIndex = -1;

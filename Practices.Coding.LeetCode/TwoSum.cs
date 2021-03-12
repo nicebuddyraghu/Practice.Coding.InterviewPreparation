@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Practices.Coding.LeetCode
 {
-    public class TwoSum
+    internal class TwoSum
     {
-        public class Solution
+        internal class Solution
         {
-            public int[] TwoSum(int[] nums, int target)
+            internal int[] TwoSum(int[] nums, int target)
             {
                 var dictionary = new Dictionary<int,int>();
                 

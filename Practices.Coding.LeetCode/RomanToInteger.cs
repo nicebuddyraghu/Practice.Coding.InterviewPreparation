@@ -13,9 +13,9 @@ namespace Practices.Coding.LeetCode
          *  
          */
 
-        public class Solution
+        internal class Solution
         {
-            public int RomanToInt(string s)
+            internal int RomanToInt(string s)
             {
 
                 if (s.Length > 15)

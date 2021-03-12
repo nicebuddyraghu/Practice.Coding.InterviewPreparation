@@ -12,9 +12,9 @@ namespace Practices.Coding.LeetCode
          * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
          */
 
-        public class Solution
+        internal class Solution
         {
-            public int RemoveDuplicates(int[] nums)
+            internal int RemoveDuplicates(int[] nums)
             {
                 System.Collections.Generic.HashSet<int> hashset = new System.Collections.Generic.HashSet<int>();
 

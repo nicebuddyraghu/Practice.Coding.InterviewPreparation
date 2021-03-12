@@ -12,9 +12,9 @@ namespace Practices.Coding.LeetCode
          * 
          * https://leetcode.com/problems/implement-strstr/
          */
-        public class Solution
+        internal class Solution
         {
-            public int StrStr(string haystack, string needle)
+            internal int StrStr(string haystack, string needle)
             {
 
                 if (String.IsNullOrEmpty(haystack) && String.IsNullOrEmpty(needle))

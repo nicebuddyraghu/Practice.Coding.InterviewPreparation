@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Practices.Coding.LeetCode
 {
-    public class RemoveElement
+    internal class RemoveElement
     {
-        public class Solution
+        internal class Solution
         {
-            public int RemoveElement(int[] nums, int val)
+            internal int RemoveElement(int[] nums, int val)
             {
 
                 if (nums == null)
