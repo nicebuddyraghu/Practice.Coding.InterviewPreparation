@@ -1,0 +1,37 @@
+﻿class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+        length = len(word)
+
+        if length == 1:
+            return True
+        
+        allcapitals = True
+        # 1. All are captials.
+        for i in range(length):
+            if not word[i].isupper():
+                allcapitals=False
+            
+        if allcapitals:
+            return True
+        
+        nocapitals = True
+        #2. No capitals
+        for i in range(length):
+            if word[i].isupper():
+                nocapitals = False
+        
+        if nocapitals:
+            return True
+        
+        firstlettercapital =True
+        for i in range(length):
+            if i>0 and word[i].isupper():
+                firstlettercapital = False
+        
+        if firstlettercapital:
+            return True
+       
+        return False
+                
+        
+            

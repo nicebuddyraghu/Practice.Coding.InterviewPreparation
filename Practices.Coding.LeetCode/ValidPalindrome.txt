@@ -1,0 +1,31 @@
+﻿class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        length = len(s)
+        endindex = length
+        newstring = ""
+        orgstringalnumonly =""
+
+        for i in range(length):
+            if not s[i].isalnum():
+                newstring += ''
+            else:
+                newstring +=s[i]
+    
+            if not s[endindex-1].isalnum():
+                orgstringalnumonly += ''
+            else:
+                orgstringalnumonly += s[endindex-1]
+
+            endindex = endindex -1
+
+        print(orgstringalnumonly.upper())
+        print(newstring.upper())
+
+        if newstring.upper() != orgstringalnumonly.upper():
+            return False
+        else:
+            return True
+        
+
+                
+            
