@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practices.Coding.LeetCode.Difficulty.Easy
 {
-    public class IncreasingDecreasingString
+    public class IncreasingDecreasingStringII
     {
         public class Solution
         {
