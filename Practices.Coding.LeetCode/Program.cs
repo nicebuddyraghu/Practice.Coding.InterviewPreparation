@@ -11,8 +11,9 @@ namespace Practices.Coding.LeetCode
             //<ClassName>.<Solution>.<MethodName>
 
             //ClimbStairs Example
-            ClimbStairs.Solution climbStairs = new ClimbStairs.Solution();
-            Console.WriteLine($"{climbStairs.ClimbStairs(7)}");
+            Console.WriteLine(4 % 2);
+            
+            
             Console.ReadLine();
         }
     }
