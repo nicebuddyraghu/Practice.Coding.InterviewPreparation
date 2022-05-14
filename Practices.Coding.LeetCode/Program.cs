@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practices.Coding.LeetCode.Sorting;
+using System;
 
 namespace Practices.Coding.LeetCode
 {
@@ -11,9 +12,22 @@ namespace Practices.Coding.LeetCode
             //<ClassName>.<Solution>.<MethodName>
 
             //ClimbStairs Example
-            Console.WriteLine(4 % 2);
-            
-            
+            BubbleSort sorting = new BubbleSort();
+            var sortedList = sorting.Sort(new int[] {10,4,43,5,57,91,45,9,7 });
+            foreach(var element in sortedList)
+            {
+                Console.Write($"->{element}");
+            }
+
+            Console.WriteLine();
+            sortedList = sorting.SortImproved(new int[] { 10, 4, 43, 5, 57, 91, 45, 9, 7 });
+            foreach (var element in sortedList)
+            {
+                Console.Write($"->{element}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Press Any Key To Continue!!");
             Console.ReadLine();
         }
     }

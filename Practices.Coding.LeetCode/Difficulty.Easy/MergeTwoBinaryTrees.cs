@@ -34,7 +34,6 @@ namespace Practices.Coding.LeetCode.Difficulty.Easy
         {
             public TreeNode MergeTrees(TreeNode root1, TreeNode root2)
             {
-
                 if (root1 == null && root2 == null)
                     return null;
 
@@ -82,7 +81,5 @@ namespace Practices.Coding.LeetCode.Difficulty.Easy
                 return node;
             }
         }
-    }
-
     }
 }
