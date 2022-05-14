@@ -12,16 +12,9 @@ namespace Practices.Coding.LeetCode
             //<ClassName>.<Solution>.<MethodName>
 
             //ClimbStairs Example
-            BubbleSort sorting = new BubbleSort();
+            SelectionSort sorting = new SelectionSort();
             var sortedList = sorting.Sort(new int[] {10,4,43,5,57,91,45,9,7 });
             foreach(var element in sortedList)
-            {
-                Console.Write($"->{element}");
-            }
-
-            Console.WriteLine();
-            sortedList = sorting.SortImproved(new int[] { 10, 4, 43, 5, 57, 91, 45, 9, 7 });
-            foreach (var element in sortedList)
             {
                 Console.Write($"->{element}");
             }
