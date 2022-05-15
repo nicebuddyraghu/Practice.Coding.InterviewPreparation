@@ -3,7 +3,7 @@ using System.Text;
 
 
 /// <summary>
-/// This solution is from geeks for geeks. But leetcode has some good solution for the MinHeapify or MaxHeapify.
+/// leetcode has some good solution for the MinHeapify or MaxHeapify. 
 /// </summary>
 namespace Practices.Coding.LeetCode.Difficulty.Medium
 {

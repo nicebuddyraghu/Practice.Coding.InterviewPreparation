@@ -12,12 +12,32 @@ namespace Practices.Coding.LeetCode
             //<ClassName>.<Solution>.<MethodName>
 
             //ClimbStairs Example
-            SelectionSort sorting = new SelectionSort();
-            var sortedList = sorting.Sort(new int[] {10,4,43,5,57,91,45,9,7 });
-            foreach(var element in sortedList)
+            var heap = new Heap.Heap(10, Heap.HeapType.Min);
+            heap.BuildHeap(heap, new int[] { 10, 4, 43, 5, 57, 91, 45, 9, 7, 1 }, 10);
+
+            foreach (var element in heap.elements)
             {
                 Console.Write($"->{element}");
             }
+
+            heap = new Heap.Heap(10, Heap.HeapType.Min);
+            heap.Insert(heap, 10);
+            heap.Insert(heap, 4);
+            heap.Insert(heap, 43);
+            heap.Insert(heap, 5);
+            heap.Insert(heap, 57);
+            heap.Insert(heap, 91);
+            heap.Insert(heap, 45); 
+            heap.Insert(heap, 9);
+            heap.Insert(heap, 7);
+            heap.Insert(heap, 1);
+            
+            Console.WriteLine();
+            foreach (var element in heap.elements)
+            {
+                Console.Write($"->{element}");
+            }
+
 
             Console.WriteLine();
             Console.WriteLine("Press Any Key To Continue!!");
