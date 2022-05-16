@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CrackingTheCodingInterview\" />
-    <Folder Include="DesignPatterns\Behavioural\" />
-    <Folder Include="DesignPatterns\Structural\" />
+    <Compile Remove="CrackingTheCodingInterview\**" />
+    <EmbeddedResource Remove="CrackingTheCodingInterview\**" />
+    <None Remove="CrackingTheCodingInterview\**" />
   </ItemGroup>
 
 </Project>
