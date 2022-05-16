@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <Folder Include="CrackingTheCodingInterview\" />
+    <Folder Include="DesignPatterns\Behavioural\" />
+    <Folder Include="DesignPatterns\Structural\" />
   </ItemGroup>
 
 </Project>
