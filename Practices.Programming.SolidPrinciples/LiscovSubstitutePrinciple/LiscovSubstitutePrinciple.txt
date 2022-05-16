@@ -1,0 +1,4 @@
+﻿1. Liskov Substitution Principle can be stated as: A type must be substitutable by its subtypes without altering the correctness of the application.
+
+Check the Rectangle and Square. 
+Settings Application level settings or Module level settings.

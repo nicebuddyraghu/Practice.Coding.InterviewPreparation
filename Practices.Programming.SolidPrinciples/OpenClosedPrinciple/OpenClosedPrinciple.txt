@@ -1,0 +1,4 @@
+﻿1. The Open/Closed Principle can be stated as: A class should be open for extension but closed for modification.
+2. OCP suggests that a class should be open for extensions. This way our need to add extra functionality is catered to. But at the same time, OCP tells us that the class should be closed for any changes. This
+   ensures that the code base (either source code form or compiled form) of the class remains untouched when the new functionality is added to the system. How is this possible? You can accomplish this by
+   abstracting the class design using either inheritance or interfaces.

@@ -1,0 +1,22 @@
+﻿1. Single Responsibility Principle can be stated as follows: A class should have only a single responsibility
+
+2. Design the class that should have single unit of work if your are designing new system. Understand the domain models and implement the changes accordingly.
+
+3. Observe the class state and behaviour if it is already implemented.
+    1. If the class has too many sub tasks implemented.
+    Example: ->Logging
+             ->Reading data from files.
+             ->Validating the data for the format required.
+             ->Implmenting the multiple bussiness rules or logic in the same class.
+
+4. Design ABC Insurance Company has policy advisor module need to help person looking for a policy depends on their requirement.
+   -> Insurance company has following Polociy Types: Auto Policy, Home Owner Policy, Health Policy, Renter Policy.
+   -> The Auto Policy depends on vehicle model, city, state, Country.
+   -> The Home Owner Policy depends on House Worth, Year Constructed, City, State, Country.
+   -> The Health Policy depends on Age,Patient Health Conditions, City, State, Country.
+   -> Renter Policy depends on House Worth, Year constructed,City,State,Country.
+   -> Policy Advisor: Takes the requirement either from UI(Mobile, Web or Desktop) or from API.
+   
+   Basically The policy Advisor responsiblity is to generate a policy quote based on the policy type and other requirements.
+
+
