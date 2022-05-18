@@ -101,7 +101,7 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine($"Size of the Tree in NonRecursive Mode: {size}");
             Console.WriteLine();
             **/
-            
+
             //Level order in reverse Order.
             /*
              * 
@@ -111,6 +111,23 @@ namespace Practices.Coding.Algorithms
 
             **/
 
+            //Height of the Tree
+            /*
+            Practices.Coding.Algorithms.BinaryTree.HieghtOfBinaryTreeNonRecursive hieghtOfBinaryTree = new BinaryTree.HieghtOfBinaryTreeNonRecursive();
+            var height=hieghtOfBinaryTree.GetHeight(root);
+            Console.WriteLine($"Height of the Tree: {height}");
+            Console.WriteLine();
+
+            Practices.Coding.Algorithms.BinaryTree.HieghtOfBinaryTreeNonRecursive hieghtOfBinaryTreeNonRecursive = new BinaryTree.HieghtOfBinaryTreeNonRecursive();
+            height = hieghtOfBinaryTreeNonRecursive.GetHeight(root);
+            Console.WriteLine($"Height of the Tree: {height}");
+            Console.WriteLine();
+            **/
+
+            Practices.Coding.Algorithms.BinaryTree.FindNumberOfFullNodes findNumberOfFullNodes = new BinaryTree.FindNumberOfFullNodes();
+            var fullnodeCount = findNumberOfFullNodes.GetFullNodeCount(root);
+            Console.WriteLine($"full nodes in Tree: {fullnodeCount}");
+            Console.WriteLine();
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
