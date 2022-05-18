@@ -21,6 +21,7 @@ namespace Practices.Coding.Algorithms
             node3.LeftTree = node6;
             node3.RighTree = node7;
 
+            //Tree Traverse.
             /*
             Console.WriteLine("PreOrder Recursive.");
             Practices.Coding.Algorithms.BinaryTree.PreOrderTraversal preOrderRecursive = new BinaryTree.PreOrderTraversal();
@@ -59,6 +60,7 @@ namespace Practices.Coding.Algorithms
 
             **/
 
+            //Find Max
             /*
             Practices.Coding.Algorithms.BinaryTree.FindMaximumInABinaryTree findMaxRecursive = new BinaryTree.FindMaximumInABinaryTree();
             int max = findMaxRecursive.Traverse(root,root.Data);
@@ -72,6 +74,9 @@ namespace Practices.Coding.Algorithms
 
             ***/
 
+            //Search.
+            /**
+            
             Practices.Coding.Algorithms.BinaryTree.SearchElementInBinaryTreeRecursive searchElementInBinaryTreeRecursive = new BinaryTree.SearchElementInBinaryTreeRecursive();
             var exists = searchElementInBinaryTreeRecursive.Search(root, 10);
             Console.WriteLine($"Values Exists: {exists}");
@@ -81,6 +86,31 @@ namespace Practices.Coding.Algorithms
             exists = searchElementinBinaryTreeNonRecursive.Search(root, 7);
             Console.WriteLine($"Values Exists: {exists}");
             Console.WriteLine();
+
+            **/
+
+            //Size
+            /*
+            Practices.Coding.Algorithms.BinaryTree.SizeOfBinaryTree sizeOfBinaryTree = new BinaryTree.SizeOfBinaryTree();
+            int size = sizeOfBinaryTree.GetSize(root);
+            Console.WriteLine($"Size of the Tree In Recursive Mode: {size}");
+            Console.WriteLine();
+
+            Practices.Coding.Algorithms.BinaryTree.SizeOfBinaryTreeNonRecursive sizeOfBinaryTreeNonRecursive = new BinaryTree.SizeOfBinaryTreeNonRecursive();
+            size = sizeOfBinaryTreeNonRecursive.GetSize(root);
+            Console.WriteLine($"Size of the Tree in NonRecursive Mode: {size}");
+            Console.WriteLine();
+            **/
+            
+            //Level order in reverse Order.
+            /*
+             * 
+            Practices.Coding.Algorithms.BinaryTree.LevelOrderOfTreeInReverseOrder levelOrderOfTreeInReverseOrder = new BinaryTree.LevelOrderOfTreeInReverseOrder();
+            levelOrderOfTreeInReverseOrder.LevelOrderInReverseOrder(root);
+            Console.WriteLine();
+
+            **/
+
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
