@@ -129,6 +129,11 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine($"full nodes in Tree: {fullnodeCount}");
             Console.WriteLine();
 
+            Practices.Coding.Algorithms.BinaryTree.HalfNodeCount halfnodeCount = new BinaryTree.HalfNodeCount();
+            var count = halfnodeCount.GetCount(root);
+            Console.WriteLine($"Half nodes in Tree: {count}");
+            Console.WriteLine();
+
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
         }

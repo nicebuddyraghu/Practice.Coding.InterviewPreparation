@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Practices.Coding.Algorithms.BinaryTree
+namespace Practices.Coding.Algorithms.BinaryTree 
 {
     public class FindNumberOfFullNodes
     {
