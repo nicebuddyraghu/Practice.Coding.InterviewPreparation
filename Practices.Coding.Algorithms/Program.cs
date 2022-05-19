@@ -34,7 +34,7 @@ namespace Practices.Coding.Algorithms
             node21.left = node41;
             node21.right = node51;
             node31.left = node61;
-            node31.right = node71;
+            //node31.right = node71;
             //Tree Traverse.
             /*
             Console.WriteLine("PreOrder Recursive.");
@@ -176,6 +176,13 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine();
             levelOrderOfTreeOrder.Travers(mirrorTree);
             Console.WriteLine();
+
+            var isMirror = mirror.CheckMirror(root, mirrorTree);
+            Console.WriteLine($"Is tree mirrored: {isMirror}");
+
+            isMirror = mirror.CheckMirror(root, root1);
+            Console.WriteLine($"Is tree mirrored: {isMirror}");
+
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
