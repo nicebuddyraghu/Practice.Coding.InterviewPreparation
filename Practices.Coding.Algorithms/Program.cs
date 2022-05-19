@@ -21,6 +21,20 @@ namespace Practices.Coding.Algorithms
             node3.LeftTree = node6;
             node3.RighTree = node7;
 
+            var root1 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(1, null, null);
+            var node21 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(2, null, null);
+            var node31 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(3, null, null);
+            var node41 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(4, null, null);
+            var node51 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(5, null, null);
+            var node61 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(6, null, null);
+            var node71 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(7, null, null);
+
+            root1.LeftTree = node21;
+            root1.RighTree = node31;
+            node21.LeftTree = node41;
+            node21.RighTree = node51;
+            node31.LeftTree = node61;
+            node31.RighTree = node71;
             //Tree Traverse.
             /*
             Console.WriteLine("PreOrder Recursive.");
@@ -124,6 +138,8 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine();
             **/
 
+            // Node count
+            /**
             Practices.Coding.Algorithms.BinaryTree.FindNumberOfFullNodes findNumberOfFullNodes = new BinaryTree.FindNumberOfFullNodes();
             var fullnodeCount = findNumberOfFullNodes.GetFullNodeCount(root);
             Console.WriteLine($"full nodes in Tree: {fullnodeCount}");
@@ -133,6 +149,13 @@ namespace Practices.Coding.Algorithms
             var count = halfnodeCount.GetCount(root);
             Console.WriteLine($"Half nodes in Tree: {count}");
             Console.WriteLine();
+
+            **/
+            Practices.Coding.Algorithms.BinaryTree.IdenticalTrees findNumberOfFullNodes = new BinaryTree.IdenticalTrees();
+            var isIdentical = findNumberOfFullNodes.IsIdentifical(root,root1);
+            Console.WriteLine($"Tree are identical: {isIdentical}");
+            Console.WriteLine();
+
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
