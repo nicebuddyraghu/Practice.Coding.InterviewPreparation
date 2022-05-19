@@ -151,11 +151,18 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine();
 
             **/
+
+
+            /**
             Practices.Coding.Algorithms.BinaryTree.IdenticalTrees findNumberOfFullNodes = new BinaryTree.IdenticalTrees();
             var isIdentical = findNumberOfFullNodes.IsIdentifical(root,root1);
             Console.WriteLine($"Tree are identical: {isIdentical}");
             Console.WriteLine();
-
+            **/
+            Console.WriteLine();
+            Practices.Coding.Algorithms.BinaryTree.RootToLeafNodes rootToLeafNodes = new BinaryTree.RootToLeafNodes();
+            rootToLeafNodes.GetRootToLeaveNodes(root);
+            Console.WriteLine();
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
