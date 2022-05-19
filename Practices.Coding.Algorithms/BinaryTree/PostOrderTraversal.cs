@@ -2,12 +2,12 @@
 {
     public class PostOrderTraversal
     {
-        public void Traverse(BinaryTree root)
+        public void Traverse(TreeNode root)
         {
             if (root == null) return;
-            if (root.LeftTree != null) Traverse(root.LeftTree);
-            if (root.RighTree != null) Traverse(root.RighTree);
-            System.Console.Write($"=>: {root.Data}");
+            if (root.left != null) Traverse(root.left);
+            if (root.right != null) Traverse(root.right);
+            System.Console.Write($"=>: {root.val}");
         }
     }
 }

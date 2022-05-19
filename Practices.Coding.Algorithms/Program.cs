@@ -6,35 +6,35 @@ namespace Practices.Coding.Algorithms
     {
         static void Main(string[] args)
         {
-            var root = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(1, null, null);
-            var node2 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(2, null, null);
-            var node3 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(3, null, null);
-            var node4 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(4, null, null);
-            var node5 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(5, null, null);
-            var node6 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(6, null, null);
-            var node7 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(7, null, null);
+            var root = new Practices.Coding.Algorithms.BinaryTree.TreeNode(1, null, null);
+            var node2 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(2, null, null);
+            var node3 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(3, null, null);
+            var node4 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(4, null, null);
+            var node5 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(5, null, null);
+            var node6 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(6, null, null);
+            var node7 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(7, null, null);
 
-            root.LeftTree = node2;
-            root.RighTree = node3;
-            node2.LeftTree = node4;
-            node2.RighTree = node5;
-            node3.LeftTree = node6;
-            node3.RighTree = node7;
+            root.left = node2;
+            root.right = node3;
+            node2.left = node4;
+            node2.right = node5;
+            node3.left = node6;
+            node3.right = node7;
 
-            var root1 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(1, null, null);
-            var node21 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(2, null, null);
-            var node31 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(3, null, null);
-            var node41 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(4, null, null);
-            var node51 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(5, null, null);
-            var node61 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(6, null, null);
-            var node71 = new Practices.Coding.Algorithms.BinaryTree.BinaryTree(7, null, null);
+            var root1 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(1, null, null);
+            var node21 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(2, null, null);
+            var node31 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(3, null, null);
+            var node41 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(4, null, null);
+            var node51 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(5, null, null);
+            var node61 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(6, null, null);
+            var node71 = new Practices.Coding.Algorithms.BinaryTree.TreeNode(7, null, null);
 
-            root1.LeftTree = node21;
-            root1.RighTree = node31;
-            node21.LeftTree = node41;
-            node21.RighTree = node51;
-            node31.LeftTree = node61;
-            node31.RighTree = node71;
+            root1.left = node21;
+            root1.right = node31;
+            node21.left = node41;
+            node21.right = node51;
+            node31.left = node61;
+            node31.right = node71;
             //Tree Traverse.
             /*
             Console.WriteLine("PreOrder Recursive.");
@@ -152,16 +152,29 @@ namespace Practices.Coding.Algorithms
 
             **/
 
-
+            //Identical nodes.
             /**
             Practices.Coding.Algorithms.BinaryTree.IdenticalTrees findNumberOfFullNodes = new BinaryTree.IdenticalTrees();
             var isIdentical = findNumberOfFullNodes.IsIdentifical(root,root1);
             Console.WriteLine($"Tree are identical: {isIdentical}");
             Console.WriteLine();
             **/
+
+            //Root to leaf nodes.
+            /*
             Console.WriteLine();
             Practices.Coding.Algorithms.BinaryTree.RootToLeafNodes rootToLeafNodes = new BinaryTree.RootToLeafNodes();
             rootToLeafNodes.GetRootToLeaveNodes(root);
+            Console.WriteLine();
+            */
+
+            //Mirror trees
+            Practices.Coding.Algorithms.BinaryTree.Mirror mirror = new BinaryTree.Mirror();
+            var mirrorTree = mirror.GetTree(root);
+            Practices.Coding.Algorithms.BinaryTree.LevelOrderTraversal levelOrderOfTreeOrder = new BinaryTree.LevelOrderTraversal();
+            levelOrderOfTreeOrder.Travers(root);
+            Console.WriteLine();
+            levelOrderOfTreeOrder.Travers(mirrorTree);
             Console.WriteLine();
 
             Console.WriteLine("Press Any Key To Exit!");

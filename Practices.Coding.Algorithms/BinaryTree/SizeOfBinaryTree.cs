@@ -2,7 +2,7 @@
 {
     public class SizeOfBinaryTree
     {
-        public int GetSize(BinaryTree root)
+        public int GetSize(TreeNode root)
         {
             int sum = 0;
             if (root == null)
@@ -11,10 +11,10 @@
             }
             else
             {
-                if (root.LeftTree != null)
-                    sum += GetSize(root.LeftTree);
-                if (root.RighTree != null)
-                    sum += GetSize(root.RighTree);
+                if (root.left != null)
+                    sum += GetSize(root.left);
+                if (root.right != null)
+                    sum += GetSize(root.right);
 
                 sum += 1; //Including the current node.
             }

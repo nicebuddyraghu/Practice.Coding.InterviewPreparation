@@ -2,25 +2,25 @@
 {
     public class FindMaximumInABinaryTree
     {
-        public int Traverse(BinaryTree root, int max)
+        public int Traverse(TreeNode root, int max)
         {
-            if(root.Data>max)
+            if(root.val>max)
             {
-                max = root.Data;
+                max = root.val;
             }
 
-            if (root.LeftTree != null)
+            if (root.left != null)
             {
-                var rightmax = Traverse(root.LeftTree, max);
+                var rightmax = Traverse(root.left, max);
                 if(rightmax>max)
                 {
                     max = rightmax;
                 }
             }
 
-            if (root.RighTree!=null)
+            if (root.right!=null)
             {
-                var leftmax = Traverse(root.RighTree, max);
+                var leftmax = Traverse(root.right, max);
                 if(leftmax>max)
                 {
                     max = leftmax;

@@ -8,16 +8,16 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class HieghtOfBinaryTree
     {
-        public int GetHeight(BinaryTree root)
+        public int GetHeight(TreeNode root)
         {
             int height = 0;
             int leftheight = 1;
             int rightheight = 1;
 
-            if (root.LeftTree != null)
-                leftheight += GetHeight(root.LeftTree);
-            if (root.RighTree != null)
-                rightheight += GetHeight(root.RighTree);
+            if (root.left != null)
+                leftheight += GetHeight(root.left);
+            if (root.right != null)
+                rightheight += GetHeight(root.right);
 
             height = (leftheight > rightheight) ? leftheight : rightheight;
             return height - 1;

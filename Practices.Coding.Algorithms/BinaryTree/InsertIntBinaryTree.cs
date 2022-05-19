@@ -4,38 +4,38 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class InsertIntBinaryTree
     {
-        public void Insert(BinaryTree root, int value)
+        public void Insert(TreeNode root, int value)
         {
-            Queue<BinaryTree> nodeQueue = new Queue<BinaryTree>();
+            Queue<TreeNode> nodeQueue = new Queue<TreeNode>();
 
             nodeQueue.Enqueue(root);
             while(nodeQueue.Count>0)
             {
                 var node = nodeQueue.Dequeue();
 
-                if(node.LeftTree==null && node.RighTree==null)
+                if(node.left==null && node.right==null)
                 {
-                    node.LeftTree = new BinaryTree(value, null, null);
+                    node.left = new TreeNode(value, null, null);
                     break;
                 }
 
-                if(node.LeftTree!=null)
+                if(node.left!=null)
                 {
-                    nodeQueue.Enqueue(node.LeftTree);
+                    nodeQueue.Enqueue(node.left);
                 }
                 else
                 {
-                    node.LeftTree = new BinaryTree(value, null, null);
+                    node.left = new TreeNode(value, null, null);
                     break;
                 }
 
-                if(node.RighTree!=null)
+                if(node.right!=null)
                 {
-                    nodeQueue.Enqueue(node.RighTree);
+                    nodeQueue.Enqueue(node.right);
                 }
                 else
                 {
-                    node.LeftTree = new BinaryTree(value, null, null);
+                    node.left = new TreeNode(value, null, null);
                     break;
                 }
             }

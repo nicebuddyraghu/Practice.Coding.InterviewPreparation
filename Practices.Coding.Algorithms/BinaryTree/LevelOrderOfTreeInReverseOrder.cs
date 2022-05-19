@@ -4,28 +4,28 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class LevelOrderOfTreeInReverseOrder
     {
-        public void LevelOrderInReverseOrder(BinaryTree root)
+        public void LevelOrderInReverseOrder(TreeNode root)
         {
-            Queue<BinaryTree> nodeQueue = new Queue<BinaryTree>();
+            Queue<TreeNode> nodeQueue = new Queue<TreeNode>();
             nodeQueue.Enqueue(root);
-            Stack<BinaryTree> nodeStack = new Stack<BinaryTree>();
+            Stack<TreeNode> nodeStack = new Stack<TreeNode>();
 
             while(nodeQueue.Count>0)
             {
                 var node = nodeQueue.Dequeue();
                 nodeStack.Push(node);
 
-                if (node.LeftTree != null)
-                    nodeQueue.Enqueue(node.LeftTree);
+                if (node.left != null)
+                    nodeQueue.Enqueue(node.left);
 
-                if (node.RighTree != null)
-                    nodeQueue.Enqueue(node.RighTree);
+                if (node.right != null)
+                    nodeQueue.Enqueue(node.right);
             }
 
             while(nodeStack.Count>0)
             {
                 var node = nodeStack.Pop();
-                System.Console.Write($"=>: {node.Data}");
+                System.Console.Write($"=>: {node.val}");
             }
         }
     }

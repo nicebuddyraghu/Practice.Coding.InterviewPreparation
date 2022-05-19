@@ -5,22 +5,22 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class InOrderTraversalNonRecurisve
     {
-        public void Traverse(BinaryTree root)
+        public void Traverse(TreeNode root)
         {
-            Stack<BinaryTree> treeStack = new Stack<BinaryTree>();
+            Stack<TreeNode> treeStack = new Stack<TreeNode>();
 
             while (true)
             {
                 while (root != null)
                 {
                     treeStack.Push(root);
-                    root = root.LeftTree;
+                    root = root.left;
                 }
 
                 if (treeStack.Count == 0) break;
                 root = treeStack.Pop();
-                System.Console.Write($"=>: {root.Data}");
-                root = root.RighTree;
+                System.Console.Write($"=>: {root.val}");
+                root = root.right;
             }
 
 

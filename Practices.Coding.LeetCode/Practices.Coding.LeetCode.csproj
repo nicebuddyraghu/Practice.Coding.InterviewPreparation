@@ -11,4 +11,8 @@
     <None Remove="CrackingTheCodingInterview\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Practices.Coding.Algorithms\Practices.Coding.Algorithms.csproj" />
+  </ItemGroup>
+
 </Project>

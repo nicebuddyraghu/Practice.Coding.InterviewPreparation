@@ -4,24 +4,24 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class HalfNodeCount
         {
-            public int GetCount(BinaryTree root)
+            public int GetCount(TreeNode root)
             {
                 int fullnodecount = 0;
-                Queue<BinaryTree> nodeQueue = new Queue<BinaryTree>();
+                Queue<TreeNode> nodeQueue = new Queue<TreeNode>();
                 nodeQueue.Enqueue(root);
                 while (nodeQueue.Count > 0)
                 {
                     var node = nodeQueue.Dequeue();
-                    if (node.LeftTree != null)
+                    if (node.left != null)
                     {
-                        nodeQueue.Enqueue(node.LeftTree);
+                        nodeQueue.Enqueue(node.left);
                     }
-                    if (node.RighTree != null)
+                    if (node.right != null)
                     {
-                        nodeQueue.Enqueue(node.RighTree);
+                        nodeQueue.Enqueue(node.right);
                     }
 
-                    if ((node.LeftTree != null && node.RighTree == null) || ((node.LeftTree == null && node.RighTree != null)))
+                    if ((node.left != null && node.right == null) || ((node.left == null && node.right != null)))
                         fullnodecount += 1;
                 }
                 return fullnodecount;

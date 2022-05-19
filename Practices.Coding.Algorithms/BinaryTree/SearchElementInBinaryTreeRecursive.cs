@@ -2,23 +2,23 @@
 {
     public class SearchElementInBinaryTreeRecursive
     {
-        public bool Search(BinaryTree root, int value)
+        public bool Search(TreeNode root, int value)
         {
-            if(root.Data==value)
+            if(root.val==value)
             {
                 return true;
             }
 
-            if(root.LeftTree!=null)
+            if(root.left!=null)
             {
-                var leftexists = Search(root.LeftTree, value);
+                var leftexists = Search(root.left, value);
                 if (leftexists)
                     return true;
             }
 
-            if(root.RighTree!=null)
+            if(root.right!=null)
             {
-                var rightexists = Search(root.RighTree, value);
+                var rightexists = Search(root.right, value);
                 if (rightexists)
                     return true;
             }

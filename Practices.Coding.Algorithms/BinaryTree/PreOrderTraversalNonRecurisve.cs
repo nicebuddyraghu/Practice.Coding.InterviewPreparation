@@ -5,24 +5,24 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class PreOrderTraversalNonRecurisve
     {
-        public void Traverse(BinaryTree root)
+        public void Traverse(TreeNode root)
         {
-            Stack<BinaryTree> treeStack = new Stack<BinaryTree>();
+            Stack<TreeNode> treeStack = new Stack<TreeNode>();
             var node = root;
             treeStack.Push(root);
             while (treeStack.Count > 0)
             {
                 node = treeStack.Pop();
-                System.Console.Write($"=>: {node.Data}");
+                System.Console.Write($"=>: {node.val}");
 
-                if (node.RighTree != null)
+                if (node.right != null)
                 {
-                    treeStack.Push(node.RighTree);
+                    treeStack.Push(node.right);
                 }
 
-                if (node.LeftTree != null)
+                if (node.left != null)
                 {
-                    treeStack.Push(node.LeftTree);
+                    treeStack.Push(node.left);
                 }
             }
 

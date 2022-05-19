@@ -2,12 +2,12 @@
 {
     public class InOrderTraversal
     {
-        public void Traverse(BinaryTree root)
+        public void Traverse(TreeNode root)
         {
             if (root == null) return;
-            if (root.LeftTree != null) Traverse(root.LeftTree);
-            System.Console.Write($"=>: {root.Data}");
-            if (root.RighTree != null) Traverse(root.RighTree);
+            if (root.left != null) Traverse(root.left);
+            System.Console.Write($"=>: {root.val}");
+            if (root.right != null) Traverse(root.right);
         }
     }
 }

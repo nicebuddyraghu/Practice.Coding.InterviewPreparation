@@ -4,25 +4,25 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class FindMaxInBinaryTreeNonRecursive
     {
-        public int Traverse(BinaryTree root, int max)
+        public int Traverse(TreeNode root, int max)
         {
-            Stack<BinaryTree> treeStack = new Stack<BinaryTree>();
+            Stack<TreeNode> treeStack = new Stack<TreeNode>();
             treeStack.Push(root);
             while(treeStack.Count>0)
             {
                 var node = treeStack.Pop();
-                if(node.Data>max)
+                if(node.val>max)
                 {
-                    max = node.Data;
+                    max = node.val;
                 }
 
-                if(node.RighTree!=null)
+                if(node.right!=null)
                 {
-                    treeStack.Push(node.RighTree);
+                    treeStack.Push(node.right);
                 }
-                if(node.LeftTree!=null)
+                if(node.left!=null)
                 {
-                    treeStack.Push(node.LeftTree);
+                    treeStack.Push(node.left);
                 }
             }
 

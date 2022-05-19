@@ -4,44 +4,44 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class RootToLeafNodes
     {
-        List<List<BinaryTree>> rootToNodeList = new List<List<BinaryTree>>();
-        public List<List<BinaryTree>> GetRootToLeaveNodes(BinaryTree root)
+        List<List<TreeNode>> rootToNodeList = new List<List<TreeNode>>();
+        public List<List<TreeNode>> GetRootToLeaveNodes(TreeNode root)
         {
-            TraverseTree(root, new List<BinaryTree>());
+            TraverseTree(root, new List<TreeNode>());
 
             foreach(var item in rootToNodeList)
             {
                 foreach(var val in item)
                 {
-                    System.Console.Write($"=>: {val.Data}");
+                    System.Console.Write($"=>: {val.val}");
                 }
                 System.Console.WriteLine();
             }
             return rootToNodeList;
         }
 
-        public void TraverseTree(BinaryTree root, List<BinaryTree> path)
+        public void TraverseTree(TreeNode root, List<TreeNode> path)
         {
             if (root == null)
                 return;
 
             path.Add(root);
 
-            if (root.LeftTree != null)
+            if (root.left != null)
             {
-                var newleftpath = new List<BinaryTree>();
+                var newleftpath = new List<TreeNode>();
                 newleftpath.AddRange(path);
-                TraverseTree(root.LeftTree, newleftpath);
+                TraverseTree(root.left, newleftpath);
             }
 
-            if (root.RighTree != null)
+            if (root.right != null)
             {
-                var newrightpath = new List<BinaryTree>();
+                var newrightpath = new List<TreeNode>();
                 newrightpath.AddRange(path);
-                TraverseTree(root.RighTree, newrightpath);
+                TraverseTree(root.right, newrightpath);
             }
 
-            if(root.LeftTree==null && root.RighTree==null)
+            if(root.left==null && root.right==null)
             {
                 rootToNodeList.Add(path);
             }

@@ -4,23 +4,23 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     class LevelOrderTraversal
     {
-        public void Travers(BinaryTree root)
+        public void Travers(TreeNode root)
         {
-            Queue<BinaryTree> queue = new Queue<BinaryTree>();
+            Queue<TreeNode> queue = new Queue<TreeNode>();
             queue.Enqueue(root);
             while(queue.Count>0)
             {
                 var node = queue.Dequeue();
-                System.Console.Write($"=>: {node.Data}");
+                System.Console.Write($"=>: {node.val}");
 
-                if(node.LeftTree!=null)
+                if(node.left!=null)
                 {
-                    queue.Enqueue(node.LeftTree);
+                    queue.Enqueue(node.left);
                 }
 
-                if(node.RighTree!=null)
+                if(node.right!=null)
                 {
-                    queue.Enqueue(node.RighTree);
+                    queue.Enqueue(node.right);
                 }
             }
 

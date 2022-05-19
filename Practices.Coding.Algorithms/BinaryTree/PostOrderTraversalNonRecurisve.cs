@@ -6,10 +6,10 @@ namespace Practices.Coding.Algorithms.BinaryTree
     public class PostOrderTraversalNonRecurisve
     {
         //Using Two Stack Approach.
-        public void Traverse(BinaryTree root)
+        public void Traverse(TreeNode root)
         {
-            Stack<BinaryTree> treeStack = new Stack<BinaryTree>();
-            Stack<BinaryTree> tempStack = new Stack<BinaryTree>();
+            Stack<TreeNode> treeStack = new Stack<TreeNode>();
+            Stack<TreeNode> tempStack = new Stack<TreeNode>();
 
             treeStack.Push(root);
             while(treeStack.Count>0)
@@ -17,21 +17,21 @@ namespace Practices.Coding.Algorithms.BinaryTree
                 var node = treeStack.Pop();
                 tempStack.Push(node);
 
-                if (node.LeftTree != null)
+                if (node.left != null)
                 {
-                    treeStack.Push(node.LeftTree);
+                    treeStack.Push(node.left);
                 }
 
-                if(node.RighTree!=null)
+                if(node.right!=null)
                 {
-                    treeStack.Push(node.RighTree);
+                    treeStack.Push(node.right);
                 }
             }
 
             while(tempStack.Count>0)
             {
                 var node = tempStack.Pop();
-                System.Console.Write($"=>: {node.Data}");
+                System.Console.Write($"=>: {node.val}");
             }
 
         }

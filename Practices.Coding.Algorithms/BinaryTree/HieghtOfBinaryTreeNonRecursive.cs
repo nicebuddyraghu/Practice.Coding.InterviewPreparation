@@ -4,24 +4,24 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class HieghtOfBinaryTreeNonRecursive
     {
-        public int GetHeight(BinaryTree root)
+        public int GetHeight(TreeNode root)
         {
-            Queue<BinaryTree> nodeQueue = new Queue<BinaryTree>();
+            Queue<TreeNode> nodeQueue = new Queue<TreeNode>();
             nodeQueue.Enqueue(root);
-            Dictionary<BinaryTree, int> nodeLevelDictionary = new Dictionary<BinaryTree, int>();
+            Dictionary<TreeNode, int> nodeLevelDictionary = new Dictionary<TreeNode, int>();
             nodeLevelDictionary.Add(root, 0);
             while (nodeQueue.Count > 0)
             {
                 var node = nodeQueue.Dequeue();
-                if (node.LeftTree != null)
+                if (node.left != null)
                 {
-                    nodeQueue.Enqueue(node.LeftTree);
-                    nodeLevelDictionary.Add(node.LeftTree, nodeLevelDictionary[node] + 1);
+                    nodeQueue.Enqueue(node.left);
+                    nodeLevelDictionary.Add(node.left, nodeLevelDictionary[node] + 1);
                 }
-                if (node.RighTree != null)
+                if (node.right != null)
                 {
-                    nodeQueue.Enqueue(node.RighTree);
-                    nodeLevelDictionary.Add(node.RighTree, nodeLevelDictionary[node] + 1);
+                    nodeQueue.Enqueue(node.right);
+                    nodeLevelDictionary.Add(node.right, nodeLevelDictionary[node] + 1);
                 }
             }
 

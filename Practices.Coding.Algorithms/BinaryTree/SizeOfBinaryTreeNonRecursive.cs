@@ -4,22 +4,22 @@ namespace Practices.Coding.Algorithms.BinaryTree
 {
     public class SizeOfBinaryTreeNonRecursive
     {
-        public int GetSize(BinaryTree root)
+        public int GetSize(TreeNode root)
         {
-            Queue<BinaryTree> nodeQueue = new Queue<BinaryTree>();
+            Queue<TreeNode> nodeQueue = new Queue<TreeNode>();
             nodeQueue.Enqueue(root);
             int count = 0;
             while(nodeQueue.Count>0)
             {
                 var node = nodeQueue.Dequeue();
                 count += 1;
-                if(node.LeftTree!=null)
+                if(node.left!=null)
                 {
-                    nodeQueue.Enqueue(node.LeftTree);
+                    nodeQueue.Enqueue(node.left);
                 }
-                if (node.RighTree != null)
+                if (node.right != null)
                 {
-                    nodeQueue.Enqueue(node.RighTree);
+                    nodeQueue.Enqueue(node.right);
                 }
             }
 
