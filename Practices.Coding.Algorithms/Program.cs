@@ -169,6 +169,8 @@ namespace Practices.Coding.Algorithms
             */
 
             //Mirror trees
+
+            /*
             Practices.Coding.Algorithms.BinaryTree.Mirror mirror = new BinaryTree.Mirror();
             var mirrorTree = mirror.GetTree(root);
             Practices.Coding.Algorithms.BinaryTree.LevelOrderTraversal levelOrderOfTreeOrder = new BinaryTree.LevelOrderTraversal();
@@ -183,9 +185,47 @@ namespace Practices.Coding.Algorithms
             isMirror = mirror.CheckMirror(root, root1);
             Console.WriteLine($"Is tree mirrored: {isMirror}");
 
+            */
+
+            //ZigZag Trees
+            /*
+            Practices.Coding.Algorithms.BinaryTree.ZigZagOrderTraversal zigZagOrder = new BinaryTree.ZigZagOrderTraversal();
+            zigZagOrder.Traverse(root);
+            Console.WriteLine();
+            */
+
+            Practices.Coding.Algorithms.BinarySearchTrees.BinarySearchTree bst = new BinarySearchTrees.BinarySearchTree(4,null,null);
+            bst.left = new BinarySearchTrees.BinarySearchTree(3, null, null);
+            bst.left.left = new BinarySearchTrees.BinarySearchTree(1, null, null);
+            bst.left.right = new BinarySearchTrees.BinarySearchTree(2, null, null);
+            bst.right = new BinarySearchTrees.BinarySearchTree(5, null, null);
+            bst.right.left = new BinarySearchTrees.BinarySearchTree(6, null, null);
+            bst.right.right = new BinarySearchTrees.BinarySearchTree(7, null, null);
+
+            Practices.Coding.Algorithms.BinarySearchTrees.FindInBinarySearchTree findInBinarySearchTree = new BinarySearchTrees.FindInBinarySearchTree();
+            var node = findInBinarySearchTree.Find(bst, 1);
+            if (node == null)
+                Console.WriteLine("Target not exists in the Bst");
+            else
+                Console.WriteLine($"Target exists in Bst {node.val}");
+
+            node = findInBinarySearchTree.FindMinimum(bst);
+            Console.WriteLine($"Minimum in Bst {node.val}");
+
+            node = findInBinarySearchTree.FindMaximum(bst);
+            Console.WriteLine($"Maximum in Bst {node.val}");
+
+            node = findInBinarySearchTree.Insert(bst,10);
+
+            Console.WriteLine($"Inserted Node : {node.val}");
+
+            node = findInBinarySearchTree.DeleteNode(bst, 1);
+            Console.WriteLine($"deleted node repalced with {node.val}");
+            Console.WriteLine();
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
         }
     }
 }
+
