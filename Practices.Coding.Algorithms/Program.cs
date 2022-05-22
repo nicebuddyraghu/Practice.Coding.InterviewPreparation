@@ -241,7 +241,7 @@ namespace Practices.Coding.Algorithms
             graphAdjList.PrintGraph(graphAdjLinkedList);
 
             */
-
+            /*
             int[] vertices = new int[] { 0,1,2,3,4,5 };
             Graphs.Edge<int> edge1 = new Graphs.Edge<int>(0, 1);
             Graphs.Edge<int> edge2 = new Graphs.Edge<int>(0, 2);
@@ -253,7 +253,7 @@ namespace Practices.Coding.Algorithms
             Graphs.GraphAdjLinkedList<int> graphAdjLinkedList = new Graphs.GraphAdjLinkedList<int>(vertices, edges,false);
             graphAdjLinkedList.PrintGraph(graphAdjLinkedList);
             Console.WriteLine();
-
+            */
             //DFS
             /*
             int[] visisted = new int[6] { 0, 0, 0, 0, 0, 0 };
@@ -263,9 +263,28 @@ namespace Practices.Coding.Algorithms
             Graphs.DFSNonRecursive dFSNonRecursive = new Graphs.DFSNonRecursive();
             dFSNonRecursive.Traverse(graphAdjLinkedList);
             Console.WriteLine();
-            */
+            
             Graphs.BFSIterative bfsIterative = new Graphs.BFSIterative();
             bfsIterative.Traverse(graphAdjLinkedList, 0);
+
+            */
+
+            int[] vertics = new int[] {2,3,5,7,8,9,10,11 };
+            Graphs.Edge<int> edge1 = new Graphs.Edge<int>(7,11);
+            Graphs.Edge<int> edge2 = new Graphs.Edge<int>(7, 8);
+            Graphs.Edge<int> edge3 = new Graphs.Edge<int>(5, 11);
+            Graphs.Edge<int> edge4 = new Graphs.Edge<int>(3, 8);
+            Graphs.Edge<int> edge5 = new Graphs.Edge<int>(11, 2);
+            Graphs.Edge<int> edge6 = new Graphs.Edge<int>(11, 9);
+            Graphs.Edge<int> edge7 = new Graphs.Edge<int>(8, 9);
+            Graphs.Edge<int> edge8 = new Graphs.Edge<int>(11, 10);
+            Graphs.Edge<int> edge9 = new Graphs.Edge<int>(3, 10);
+            Graphs.Edge<int>[] edges = new Graphs.Edge<int>[] { edge1, edge2, edge3, edge4, edge5, edge6, edge7, edge8, edge9 };
+
+            var graph = new Graphs.GraphAdjMatrix<int>(vertics, edges);
+            Graphs.TopologicalSortUsingAdjMatrix topologicalSortAdjMatrix = new Graphs.TopologicalSortUsingAdjMatrix();
+            topologicalSortAdjMatrix.TopoloicalSort(graph);
+
             Console.WriteLine();
 
             Console.WriteLine("Press Any Key To Exit!");
