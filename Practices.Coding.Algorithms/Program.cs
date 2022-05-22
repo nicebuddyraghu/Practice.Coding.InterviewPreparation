@@ -194,6 +194,7 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine();
             */
 
+            /*
             Practices.Coding.Algorithms.BinarySearchTrees.BinarySearchTree bst = new BinarySearchTrees.BinarySearchTree(4,null,null);
             bst.left = new BinarySearchTrees.BinarySearchTree(3, null, null);
             bst.left.left = new BinarySearchTrees.BinarySearchTree(1, null, null);
@@ -222,6 +223,17 @@ namespace Practices.Coding.Algorithms
             node = findInBinarySearchTree.DeleteNode(bst, 1);
             Console.WriteLine($"deleted node repalced with {node.val}");
             Console.WriteLine();
+            */
+
+            char[] vertices = new char[] { 'A', 'B', 'C', 'D', 'E'};
+            Graphs.Edge<char> edge1 = new Graphs.Edge<char>('A', 'B');
+            Graphs.Edge<char> edge2 = new Graphs.Edge<char>('A', 'C');
+            Graphs.Edge<char> edge3 = new Graphs.Edge<char>('B', 'D');
+            Graphs.Edge<char> edge4 = new Graphs.Edge<char>('C', 'D');
+            Graphs.Edge<char> edge5 = new Graphs.Edge<char>('C', 'E');
+            Graphs.Edge<char>[] edges = new Graphs.Edge<char>[] { edge1,edge2,edge3,edge4,edge5};
+            Graphs.GraphAdjLinkedList<char> graphAdjLinkedList = new Graphs.GraphAdjLinkedList<char>(vertices, edges);
+            graphAdjLinkedList.PrintGraph(graphAdjLinkedList);
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
