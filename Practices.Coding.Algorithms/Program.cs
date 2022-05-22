@@ -241,6 +241,7 @@ namespace Practices.Coding.Algorithms
             graphAdjList.PrintGraph(graphAdjLinkedList);
 
             */
+
             int[] vertices = new int[] { 0,1,2,3,4,5 };
             Graphs.Edge<int> edge1 = new Graphs.Edge<int>(0, 1);
             Graphs.Edge<int> edge2 = new Graphs.Edge<int>(0, 2);
@@ -253,13 +254,19 @@ namespace Practices.Coding.Algorithms
             graphAdjLinkedList.PrintGraph(graphAdjLinkedList);
             Console.WriteLine();
 
+            //DFS
+            /*
             int[] visisted = new int[6] { 0, 0, 0, 0, 0, 0 };
             Graphs.DFSRecursive dfsRecursive = new Graphs.DFSRecursive();
             dfsRecursive.Traverse(graphAdjLinkedList, 0, visisted);
-
             Console.WriteLine();
             Graphs.DFSNonRecursive dFSNonRecursive = new Graphs.DFSNonRecursive();
             dFSNonRecursive.Traverse(graphAdjLinkedList);
+            Console.WriteLine();
+            */
+            Graphs.BFSIterative bfsIterative = new Graphs.BFSIterative();
+            bfsIterative.Traverse(graphAdjLinkedList, 0);
+            Console.WriteLine();
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();

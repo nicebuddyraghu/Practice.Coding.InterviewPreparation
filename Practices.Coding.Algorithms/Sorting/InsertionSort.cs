@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practices.Coding.Algorithms.Sorting
+﻿namespace Practices.Coding.Algorithms.Sorting
 {
     internal class InsertionSort
     {
