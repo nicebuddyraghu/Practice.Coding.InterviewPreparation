@@ -225,6 +225,8 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine();
             */
 
+            //Graph implementation.
+            /* 
             char[] vertices = new char[] { 'A', 'B', 'C', 'D', 'E'};
             Graphs.Edge<char> edge1 = new Graphs.Edge<char>('A', 'B');
             Graphs.Edge<char> edge2 = new Graphs.Edge<char>('A', 'C');
@@ -232,11 +234,32 @@ namespace Practices.Coding.Algorithms
             Graphs.Edge<char> edge4 = new Graphs.Edge<char>('C', 'D');
             Graphs.Edge<char> edge5 = new Graphs.Edge<char>('C', 'E');
             Graphs.Edge<char>[] edges = new Graphs.Edge<char>[] { edge1,edge2,edge3,edge4,edge5};
-           Graphs.GraphAdjLinkedList<char> graphAdjLinkedList = new Graphs.GraphAdjLinkedList<char>(vertices, edges);
+            Graphs.GraphAdjLinkedList<char> graphAdjLinkedList = new Graphs.GraphAdjLinkedList<char>(vertices, edges);
             graphAdjLinkedList.PrintGraph(graphAdjLinkedList);
 
             Graphs.GraphAdjList<char> graphAdjList = new Graphs.GraphAdjList<char>(vertices, edges);
             graphAdjList.PrintGraph(graphAdjLinkedList);
+
+            */
+            int[] vertices = new int[] { 0,1,2,3,4,5 };
+            Graphs.Edge<int> edge1 = new Graphs.Edge<int>(0, 1);
+            Graphs.Edge<int> edge2 = new Graphs.Edge<int>(0, 2);
+            Graphs.Edge<int> edge3 = new Graphs.Edge<int>(0, 5);
+            Graphs.Edge<int> edge4 = new Graphs.Edge<int>(1, 3);
+            Graphs.Edge<int> edge5 = new Graphs.Edge<int>(2, 4);
+            Graphs.Edge<int> edge6 = new Graphs.Edge<int>(3, 5);
+            Graphs.Edge<int>[] edges = new Graphs.Edge<int>[] { edge1, edge2, edge3, edge4, edge5,edge6 };
+            Graphs.GraphAdjLinkedList<int> graphAdjLinkedList = new Graphs.GraphAdjLinkedList<int>(vertices, edges,false);
+            graphAdjLinkedList.PrintGraph(graphAdjLinkedList);
+            Console.WriteLine();
+
+            int[] visisted = new int[6] { 0, 0, 0, 0, 0, 0 };
+            Graphs.DFSRecursive dfsRecursive = new Graphs.DFSRecursive();
+            dfsRecursive.Traverse(graphAdjLinkedList, 0, visisted);
+
+            Console.WriteLine();
+            Graphs.DFSNonRecursive dFSNonRecursive = new Graphs.DFSNonRecursive();
+            dFSNonRecursive.Traverse(graphAdjLinkedList);
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();

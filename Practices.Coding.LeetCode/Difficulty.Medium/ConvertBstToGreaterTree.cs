@@ -31,10 +31,7 @@ namespace Practices.Coding.LeetCode.Difficulty.Medium
         {
             public TreeNode ConvertBST(TreeNode root)
             {
-
-                int totalsum = 0;
                 CalculateGreaterSumAtNodeLevel(root, 0);
-
                 return root;
             }
 
