@@ -232,8 +232,11 @@ namespace Practices.Coding.Algorithms
             Graphs.Edge<char> edge4 = new Graphs.Edge<char>('C', 'D');
             Graphs.Edge<char> edge5 = new Graphs.Edge<char>('C', 'E');
             Graphs.Edge<char>[] edges = new Graphs.Edge<char>[] { edge1,edge2,edge3,edge4,edge5};
-            Graphs.GraphAdjLinkedList<char> graphAdjLinkedList = new Graphs.GraphAdjLinkedList<char>(vertices, edges);
+           Graphs.GraphAdjLinkedList<char> graphAdjLinkedList = new Graphs.GraphAdjLinkedList<char>(vertices, edges);
             graphAdjLinkedList.PrintGraph(graphAdjLinkedList);
+
+            Graphs.GraphAdjList<char> graphAdjList = new Graphs.GraphAdjList<char>(vertices, edges);
+            graphAdjList.PrintGraph(graphAdjLinkedList);
 
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
