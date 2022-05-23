@@ -27,17 +27,19 @@ namespace Practices.Coding.Algorithms.Graphs
 
     public class GraphAdjLinkedList<T>
     {
-        Dictionary<T,int> vertextable = new Dictionary<T,int>();
+        Dictionary<T,int> indextable = new Dictionary<T,int>();
         public GraphAdjLinkedList(T[] vertices, Edge<T>[] edges, bool isDirectGraph=true)
         {
             this.Vertices = vertices;
             this.Edges = edges;
 
             if (vertices.Length == 0) return;
+            
             for(int index=0;index<vertices.Length;index++)
             {
-                vertextable.Add(vertices[index],index);
+                indextable.Add(vertices[index],index);
             }
+
             AdjList = new ListNode<T>[vertices.Length];
 
             foreach(var edge in edges)
@@ -53,17 +55,17 @@ namespace Practices.Coding.Algorithms.Graphs
                 }
             }
         }
+        public Dictionary<T, int> Indextable => indextable;
         public T[] Vertices { get; set; }
         public Edge<T>[] Edges { get; set; }
         public ListNode<T>[] AdjList { get; set; }
-
 
         public void InsertEdge(Edge<T> edge)
         {
             T from = edge.Source;
             T to = edge.Destination;
 
-            int vertexindex = vertextable[from];
+            int vertexindex = indextable[from];
             var node = AdjList[vertexindex];
 
             if(node==null)
@@ -95,7 +97,7 @@ namespace Practices.Coding.Algorithms.Graphs
             T from = edge.Source;
             T to = edge.Destination;
 
-            int vertexindex = vertextable[from];
+            int vertexindex = indextable[from];
             var node = AdjList[vertexindex];
 
             if (node == null)
@@ -136,7 +138,7 @@ namespace Practices.Coding.Algorithms.Graphs
 
             for(int index=0;index<graph.Vertices.Length;index++)
             {
-                foreach(var row in vertextable)
+                foreach(var row in indextable)
                 {
                     if(row.Value == index)
                     {

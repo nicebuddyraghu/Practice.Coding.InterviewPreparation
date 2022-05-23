@@ -4,19 +4,20 @@ namespace Practices.Coding.Algorithms.Graphs
 {
     public class DFSRecursive
     {
-        public void Traverse(GraphAdjLinkedList<int> graph, int start, int[] visisted)
+        public void Traverse(GraphAdjLinkedList<int> graph, int start, int[] visisted, System.Collections.Generic.Stack<int> stack)
         {
-            Console.WriteLine($"DFS Visisted=>{start}");
-            visisted[start] = 1;
-            var node = graph.AdjList[start];
+            var node = graph.AdjList[graph.Indextable[start]];
+            visisted[graph.Indextable[start]] = 1;
+           
             if (node == null) return;
             while(node!=null)
             {
-                if(visisted[node.Vertex]==0)
-                    Traverse(graph, node.Vertex, visisted);
+                if(visisted[graph.Indextable[node.Vertex]]==0)
+                    Traverse(graph, node.Vertex, visisted,stack);
                else
                     node = node.Next;
             }
+            stack.Push(start);
         }
     }
 }

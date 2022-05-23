@@ -269,6 +269,8 @@ namespace Practices.Coding.Algorithms
 
             */
 
+            /*
+             * 
             int[] vertics = new int[] {2,3,5,7,8,9,10,11 };
             Graphs.Edge<int> edge1 = new Graphs.Edge<int>(7,11);
             Graphs.Edge<int> edge2 = new Graphs.Edge<int>(7, 8);
@@ -281,15 +283,42 @@ namespace Practices.Coding.Algorithms
             Graphs.Edge<int> edge9 = new Graphs.Edge<int>(3, 10);
             Graphs.Edge<int>[] edges = new Graphs.Edge<int>[] { edge1, edge2, edge3, edge4, edge5, edge6, edge7, edge8, edge9 };
 
+            
             var graph = new Graphs.GraphAdjMatrix<int>(vertics, edges);
             Graphs.TopologicalSortUsingAdjMatrix topologicalSortAdjMatrix = new Graphs.TopologicalSortUsingAdjMatrix();
             topologicalSortAdjMatrix.TopoloicalSort(graph);
-
             Console.WriteLine();
 
+            var directGraph = new Graphs.GraphAdjLinkedList<int>(vertics, edges);
+            Graphs.TopologicalSortUsingAdjList topologicalSortUsingAdjList = new Graphs.TopologicalSortUsingAdjList();
+            topologicalSortUsingAdjList.Sort(directGraph);
+            */
+
+            Heap.MaxHeap maxheap = new Heap.MaxHeap();
+            maxheap.Insert(45);
+            maxheap.Insert(20);
+            maxheap.Insert(14);
+            maxheap.Insert(12);
+            maxheap.Insert(31);
+            maxheap.Insert(7);
+            maxheap.Insert(11);
+            maxheap.Insert(13);
+            maxheap.Insert(7);
+
+            maxheap.PrintHeap();
+            maxheap.Remove(3);
+            maxheap.PrintHeap();
+            maxheap.Remove(3);
+            maxheap.PrintHeap();
+            maxheap.Remove(3);
+            maxheap.PrintHeap();
+            maxheap.Remove(3);
+            maxheap.PrintHeap();
+            Console.WriteLine();
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
         }
     }
 }
+
 
