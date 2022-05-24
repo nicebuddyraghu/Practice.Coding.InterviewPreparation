@@ -294,6 +294,8 @@ namespace Practices.Coding.Algorithms
             topologicalSortUsingAdjList.Sort(directGraph);
             */
 
+            //Max Heap
+            /*
             Heap.MaxHeap maxheap = new Heap.MaxHeap();
             maxheap.Insert(45);
             maxheap.Insert(20);
@@ -314,6 +316,21 @@ namespace Practices.Coding.Algorithms
             maxheap.PrintHeap();
             maxheap.Remove(3);
             maxheap.PrintHeap();
+            Console.WriteLine();
+
+            */
+            Heap.MinHeapPq<int> priorityQueue = new Heap.MinHeapPq<int>();
+            priorityQueue.Insert(10,45);
+            priorityQueue.Insert(1,20);
+            priorityQueue.Insert(2,14);
+            priorityQueue.Insert(3,12);
+            priorityQueue.Insert(4,31);
+            priorityQueue.Insert(0,7);
+            priorityQueue.Insert(1,11);
+            priorityQueue.Insert(2,13);
+
+            priorityQueue.PrintHeap();
+
             Console.WriteLine();
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
