@@ -319,6 +319,10 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine();
 
             */
+
+            //Priority Queue
+
+            /*
             Heap.MinHeapPq<int> priorityQueue = new Heap.MinHeapPq<int>();
             priorityQueue.Insert(10,45);
             priorityQueue.Insert(1,20);
@@ -330,7 +334,23 @@ namespace Practices.Coding.Algorithms
             priorityQueue.Insert(2,13);
 
             priorityQueue.PrintHeap();
+            */
 
+            Heap.MinHeapPq minHeap = new Heap.MinHeapPq();
+            int[] list = new int[] { 9,1,2,8,0,5,6,3};
+            //minHeap.Insert(9);
+            //minHeap.Insert(1);
+            //minHeap.Insert(2);
+            //minHeap.Insert(8);
+            //minHeap.Insert(0);
+            //minHeap.Insert(5);
+            //minHeap.Insert(6);
+            //minHeap.Insert(3);
+
+            //minHeap = minHeap.Build(list);
+            minHeap.PrintHeap();
+            Heap.HeapSort heapsort = new Heap.HeapSort();
+            heapsort.Sort(list);
             Console.WriteLine();
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();

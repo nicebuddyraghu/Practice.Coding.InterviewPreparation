@@ -1,26 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Practices.Coding.Algorithms.Heap
 {
-    public class GraphVertex<T> 
+    public class MinHeapPq
     {
-        public int Weight { get; set; }
-        public T Node { get; set; }
-    }
-    public class MinHeapPq<T>
-    {
-        List<GraphVertex<T>> heaplist = new List<GraphVertex<T>>();
-        int size = -1;
+        public List<int> heaplist = new List<int>();
+        public int size = -1;
         public int Count => size+1;
         public void PrintHeap()
         {
-            for (int index = 0; index <= size; index++)
+            for (int index = 0; index <=size; index++)
             {
-                System.Console.WriteLine($"=>Node: {heaplist[index].Node} Weight:{heaplist[index].Weight}");
+                System.Console.Write($"=> {heaplist[index]}:");
             }
             System.Console.WriteLine();
         }
@@ -29,24 +20,26 @@ namespace Practices.Coding.Algorithms.Heap
         {
             if (index > size)
                 return -1;
+            int parentindex = (index - 1) / 2;
 
-            return (index - 1) / 2;
+            if (parentindex > size)
+                return -1;
+
+            return parentindex;
         }
 
         public int GetLeftChildIndex(int index)
         {
-            if (index < 0 || index > size)
-                return -1;
+            int leftindex = (index * 2) + 1;
 
-            return (index * 2) + 1;
+            return leftindex;
         }
 
         public int GetRightChildIndex(int index)
         {
-            if (index < 0 || index > size)
-                return -1;
+            int rightindex = (index * 2) + 2;
 
-            return (index * 2) + 2;
+            return rightindex;
         }
 
         public void Swap(int index1, int index2)
@@ -56,17 +49,17 @@ namespace Practices.Coding.Algorithms.Heap
             heaplist[index2] = temp;
         }
 
-        public GraphVertex<T> GetMinimum()
+        public int GetMinimum()
         {
             if (heaplist.Count > 0)
               return heaplist[0];
 
-            return null;
+            return -1;
         }
 
         public void ShiftUp(int index)
         {
-            while (index > 0 && heaplist[GetParentIndex(index)].Weight > heaplist[index].Weight)
+            while (index > 0 && heaplist[GetParentIndex(index)] > heaplist[index])
             {
                 Swap(GetParentIndex(index), index);
                 index = GetParentIndex(index);
@@ -79,12 +72,12 @@ namespace Practices.Coding.Algorithms.Heap
             int leftchildindex = GetLeftChildIndex(index);
             int rightchildindex = GetRightChildIndex(index);
 
-            if (heaplist[leftchildindex].Weight < heaplist[index].Weight && leftchildindex < size)
+            if (leftchildindex < heaplist.Count && heaplist[leftchildindex] < heaplist[index])
             {
                 maxindex = leftchildindex;
             }
 
-            if (heaplist[rightchildindex].Weight < heaplist[maxindex].Weight && rightchildindex < size)
+            if (rightchildindex < heaplist.Count && heaplist[rightchildindex] < heaplist[maxindex])
             {
                 maxindex = rightchildindex;
             }
@@ -96,19 +89,10 @@ namespace Practices.Coding.Algorithms.Heap
             }
         }
 
-        public void ChangePriority(int newvalue, GraphVertex<T> node)
+        public void ChangePriority(int newvalue, int index)
         {
-            int index = 0;
-            foreach(var innode in heaplist)
-            {
-                if(innode.Weight ==node.Weight && innode.Node.ToString() == node.Node.ToString())
-                {
-                    break;
-                }
-                index++;
-            }
-            var oldval = heaplist[index].Weight;
-            heaplist[index].Weight = newvalue;
+            var oldval = heaplist[index];
+            heaplist[index] = newvalue;
             if (oldval > newvalue)
             {
                 ShiftUp(index);
@@ -119,32 +103,49 @@ namespace Practices.Coding.Algorithms.Heap
             }
 
         }
-        public void Insert(int weight,T node)
+        public void Insert(int value)
         {
             size = size + 1;
-            heaplist.Add(new GraphVertex<T>() { Weight=weight,Node = node});
+            heaplist.Add(value);
 
             ShiftUp(size);
         }
 
-        public GraphVertex<T> RemoveMin()
+        public int RemoveMin()
         {
-            GraphVertex<T> result = heaplist[0];
+            var result = heaplist[0];
             heaplist[0] = heaplist[size];
             size = size - 1;
             ShiftDown(0);
             return result;
         }
 
-        public GraphVertex<T> Remove(int index)
+        public int Remove(int index)
         {
-            GraphVertex<T> result = heaplist[index];
-            heaplist[index].Weight = heaplist[0].Weight - 1;
+            var result = heaplist[index];
+            heaplist[index] = heaplist[0] - 1;
             ShiftUp(index);
             RemoveMin();
             return result;
         }
 
-       
+        public MinHeapPq Build(int[] list)
+        {
+            var minHeap = new MinHeapPq();
+            minHeap.size = list.Length-1;
+            for (int index = 0; index < list.Length; index++)
+            {
+                minHeap.heaplist.Add(list[index]);
+            }
+
+            for (int index = ((list.Length) /2)-1; index >= 0; index--)
+            {
+                minHeap.ShiftDown(index);
+                minHeap.PrintHeap();
+                System.Console.WriteLine();
+            }
+            
+            return minHeap;
+        }
     }
 }
