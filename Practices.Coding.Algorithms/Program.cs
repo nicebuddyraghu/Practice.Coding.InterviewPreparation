@@ -336,6 +336,7 @@ namespace Practices.Coding.Algorithms
             priorityQueue.PrintHeap();
             */
 
+            /*
             Heap.MinHeapPq minHeap = new Heap.MinHeapPq();
             int[] list = new int[] { 9,1,2,8,0,5,6,3};
             //minHeap.Insert(9);
@@ -351,6 +352,24 @@ namespace Practices.Coding.Algorithms
             minHeap.PrintHeap();
             Heap.HeapSort heapsort = new Heap.HeapSort();
             heapsort.Sort(list);
+            */
+
+            /*
+            
+            int[] list = new int[] { 9, 1, 2, 8, 0, 5, 6, 3 };
+            Sorting.TreeSort treesort = new Sorting.TreeSort();
+            treesort.Sort(list);
+
+            */
+
+            Sorting.QuickSort quickSort = new Sorting.QuickSort();
+            int[] unsorted = new int[] { 5,8,3,4,2,7};
+            quickSort.Sort(unsorted, 0, unsorted.Length - 1);
+
+            foreach (var item in unsorted)
+            {
+                Console.WriteLine($"=>{item}");
+            }
             Console.WriteLine();
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
