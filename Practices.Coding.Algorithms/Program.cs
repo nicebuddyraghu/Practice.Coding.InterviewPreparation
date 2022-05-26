@@ -371,6 +371,16 @@ namespace Practices.Coding.Algorithms
                 Console.WriteLine($"=>{item}");
             }
             Console.WriteLine();
+
+            unsorted = new int[] { 5, 8, 3, 4, 2, 7 };
+            quickSort.RandamizedQuickSort(unsorted, 0, unsorted.Length - 1);
+
+            foreach (var item in unsorted)
+            {
+                Console.WriteLine($"=>{item}");
+            }
+            Console.WriteLine();
+
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
         }
