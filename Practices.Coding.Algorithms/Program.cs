@@ -362,6 +362,7 @@ namespace Practices.Coding.Algorithms
 
             */
 
+            /* quick sort
             Sorting.QuickSort quickSort = new Sorting.QuickSort();
             int[] unsorted = new int[] { 5,8,3,4,2,7};
             quickSort.Sort(unsorted, 0, unsorted.Length - 1);
@@ -379,6 +380,35 @@ namespace Practices.Coding.Algorithms
             {
                 Console.WriteLine($"=>{item}");
             }
+            Console.WriteLine();
+            */
+
+            /*
+            var unsorted = new int[] { 5, 8, 3, 4, 2, 7 };
+            Sorting.CountingSort countingsort = new Sorting.CountingSort();
+            var output = countingsort.Sort(unsorted, 12);
+
+            foreach (var item in output)
+            {
+                Console.WriteLine($"=>{item}");
+            }
+            */
+
+
+            StringMatching.StringMatchingBruteForceMethod stringMatchingBruteForce = new StringMatching.StringMatchingBruteForceMethod();
+            int index = stringMatchingBruteForce.Match("abd abde ahbalsjd abc", "abc");
+            Console.WriteLine($"Matching Index {index}");
+
+            Console.WriteLine();
+            StringMatching.RabinKarpStringMatching rabinKarpStringMatching = new StringMatching.RabinKarpStringMatching();
+            index = rabinKarpStringMatching.Match("abd abde ahbalsjd abc", "abc");
+            Console.WriteLine($"Matching Index {index}");
+
+            Console.WriteLine();
+            StringMatching.KMPAlgorithm kmpalgorithm = new StringMatching.KMPAlgorithm();
+            index = kmpalgorithm.Match("abd abde ahbalsjd abc", "abc");
+            Console.WriteLine($"Matching Index {index}");
+
             Console.WriteLine();
 
             Console.WriteLine("Press Any Key To Exit!");
