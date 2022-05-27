@@ -394,7 +394,7 @@ namespace Practices.Coding.Algorithms
             }
             */
 
-
+            /*
             StringMatching.StringMatchingBruteForceMethod stringMatchingBruteForce = new StringMatching.StringMatchingBruteForceMethod();
             int index = stringMatchingBruteForce.Match("abd abde ahbalsjd abc", "abc");
             Console.WriteLine($"Matching Index {index}");
@@ -408,6 +408,15 @@ namespace Practices.Coding.Algorithms
             StringMatching.KMPAlgorithm kmpalgorithm = new StringMatching.KMPAlgorithm();
             index = kmpalgorithm.Match("abd abde ahbalsjd abc", "abc");
             Console.WriteLine($"Matching Index {index}");
+            */
+
+            StringMatching.Trie trie = new StringMatching.Trie();
+            trie.Insert("abd");
+            trie.Insert("abde");
+            trie.Insert("ahbalsjd");
+            trie.Insert("abc");
+            trie.Delete("abd");
+            Console.WriteLine(trie.Search("abc"));
 
             Console.WriteLine();
 
