@@ -393,7 +393,7 @@ namespace Practices.Coding.Algorithms
             }
             Console.WriteLine();
             */
-            
+            /*
                         var unsorted = new int[] { 2, 0, 1 };
                         Sorting.CountingSort countingsort = new Sorting.CountingSort();
                         var output = countingsort.Sort(unsorted, 10);
@@ -403,6 +403,7 @@ namespace Practices.Coding.Algorithms
                             Console.Write($"=>{item}");
                         }
 
+            */
             /*
             StringMatching.StringMatchingBruteForceMethod stringMatchingBruteForce = new StringMatching.StringMatchingBruteForceMethod();
             int index = stringMatchingBruteForce.Match("abd abde ahbalsjd abc", "abc");
@@ -430,8 +431,24 @@ namespace Practices.Coding.Algorithms
 
             */
 
+            int[] arr = new int[] { 1,2,3,1,3,6,6};
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[Math.Abs(arr[i])] >= 0)
+                    arr[Math.Abs(arr[i])] =
+                        -arr[Math.Abs(arr[i])];
+                else
+                    Console.Write(Math.Abs(arr[i]) + " ");
+            }
+            
             Console.WriteLine();
 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write((arr[i]) + " ");
+            }
+
+            Console.WriteLine();
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
         }
