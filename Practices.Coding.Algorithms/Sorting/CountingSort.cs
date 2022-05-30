@@ -5,7 +5,7 @@
         public int[] Sort(int[] nums, int range)
         {
             int[] rangenums = new int[range];
-            int[] output = new int[nums.Length];
+            int[] output = new int[range];
 
             for (int index=0;index<range;index++)
             {
@@ -17,23 +17,37 @@
                 rangenums[nums[index]] = rangenums[nums[index]]+1;                   
             }
 
-            for(int index=1;index<range;index++)
+
+            for (int index = 0; index < range; index++)
             {
-                rangenums[index] = rangenums[index - 1] + rangenums[index];
+                System.Console.Write($"{rangenums[index]}");
+            }
+            System.Console.WriteLine();
+
+
+            for (int index=1;index<range;index++)
+            {
+                rangenums[index] = rangenums[index]+ rangenums[index - 1]  ;
             }
 
-            for (int index = 0; index < nums.Length; index++)
+            for (int index = 0; index < range; index++)
             {
-                int value = nums[index];
-                int position = rangenums[value];
-                if (position < nums.Length)
-                {
-                    output[position] = nums[index];
-                    rangenums[value] = rangenums[value] - 1;
-                }
+                System.Console.Write($"{rangenums[index]}");
+            }
+            System.Console.WriteLine();
+
+            for (int index = nums.Length-1; index >=0; index--)
+            {
+                output[rangenums[nums[index]]] = nums[index];
+                rangenums[nums[index]] = rangenums[nums[index]] - 1;
             }
 
-            return output;
+            for (int index = nums.Length - 1; index >= 0; index--)
+            {
+                nums[index] = output[index+1];
+            }
+
+            return nums;
         }
     }
 }

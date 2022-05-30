@@ -373,7 +373,7 @@ namespace Practices.Coding.Algorithms
             }
             Console.WriteLine();
 
-            unsorted = new int[] { 5, 8, 3, 4, 2, 7 };
+            var unsorted = new int[] { 9,8,7,6,5,4,3,2};
             quickSort.RandamizedQuickSort(unsorted, 0, unsorted.Length - 1);
 
             foreach (var item in unsorted)
@@ -382,17 +382,26 @@ namespace Practices.Coding.Algorithms
             }
             Console.WriteLine();
             */
-
             /*
-            var unsorted = new int[] { 5, 8, 3, 4, 2, 7 };
-            Sorting.CountingSort countingsort = new Sorting.CountingSort();
-            var output = countingsort.Sort(unsorted, 12);
+            Sorting.QuickSort quickSort = new Sorting.QuickSort();
+            var unsorted = new int[] { 9, 8, 7, 6, 5, 4, 3, 2 };
+            quickSort.RandamizedQuickSort(unsorted, 0, unsorted.Length - 1);
 
-            foreach (var item in output)
+            foreach (var item in unsorted)
             {
-                Console.WriteLine($"=>{item}");
+                Console.Write($"=>{item}");
             }
+            Console.WriteLine();
             */
+            
+                        var unsorted = new int[] { 2, 0, 1 };
+                        Sorting.CountingSort countingsort = new Sorting.CountingSort();
+                        var output = countingsort.Sort(unsorted, 10);
+
+                        foreach (var item in output)
+                        {
+                            Console.Write($"=>{item}");
+                        }
 
             /*
             StringMatching.StringMatchingBruteForceMethod stringMatchingBruteForce = new StringMatching.StringMatchingBruteForceMethod();
@@ -410,6 +419,7 @@ namespace Practices.Coding.Algorithms
             Console.WriteLine($"Matching Index {index}");
             */
 
+            /*
             StringMatching.Trie trie = new StringMatching.Trie();
             trie.Insert("abd");
             trie.Insert("abde");
@@ -417,6 +427,8 @@ namespace Practices.Coding.Algorithms
             trie.Insert("abc");
             trie.Delete("abd");
             Console.WriteLine(trie.Search("abc"));
+
+            */
 
             Console.WriteLine();
 
