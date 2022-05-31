@@ -17,7 +17,7 @@
                 rangenums[nums[index]] = rangenums[nums[index]]+1;                   
             }
 
-
+             
             for (int index = 0; index < range; index++)
             {
                 System.Console.Write($"{rangenums[index]}");

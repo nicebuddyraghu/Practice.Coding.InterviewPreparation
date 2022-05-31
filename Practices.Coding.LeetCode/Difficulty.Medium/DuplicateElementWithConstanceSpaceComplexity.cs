@@ -11,7 +11,8 @@ namespace Practices.Coding.LeetCode.Difficulty.Medium
     {
         public int FindDuplicate(int[] nums)
         {
-
+            System.Collections.Generic.List<string> list = new System.Collections.Generic.List<string>();
+            list.Sort();
             for (int index = 0; index <= nums.Length - 1; index++)
             {
                 if (nums[Math.Abs(nums[index])] >= 0)
