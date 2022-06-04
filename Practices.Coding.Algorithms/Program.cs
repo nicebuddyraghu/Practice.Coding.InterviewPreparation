@@ -431,6 +431,7 @@ namespace Practices.Coding.Algorithms
 
             */
 
+            /*
             int[] arr = new int[] { 1,2,3,1,3,6,6};
             for (int i = 0; i < arr.Length; i++)
             {
@@ -448,10 +449,13 @@ namespace Practices.Coding.Algorithms
                 Console.Write((arr[i]) + " ");
             }
 
-            Console.WriteLine();
+            */
+
+            Console.WriteLine(value);
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
         }
+      
     }
 }
 
