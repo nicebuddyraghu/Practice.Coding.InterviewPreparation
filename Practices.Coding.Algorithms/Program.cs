@@ -451,7 +451,6 @@ namespace Practices.Coding.Algorithms
 
             */
 
-            Console.WriteLine(value);
             Console.WriteLine("Press Any Key To Exit!");
             Console.ReadLine();
         }
