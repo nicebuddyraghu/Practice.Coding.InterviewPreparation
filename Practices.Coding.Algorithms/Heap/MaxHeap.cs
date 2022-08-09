@@ -4,17 +4,18 @@ namespace Practices.Coding.Algorithms.Heap
 {
     public class MaxHeap
     {
-        List<int> heaplist = new List<int>();
-        int size = -1;
+        public List<int> heaplist = new List<int>();
+        public int size = -1;
 
         public void PrintHeap()
         {
-            for(int index=0;index<=size;index++)
+            for(int index=0;index<heaplist.Count;index++)
             {
                 System.Console.Write($"=>{heaplist[index]}");
             }
             System.Console.WriteLine();
         }
+     
         //Basic ones
         public int GetParentIndex(int index)
         {
@@ -57,7 +58,7 @@ namespace Practices.Coding.Algorithms.Heap
 
         public void ShiftUp(int index)
         {
-            while(index>0 && heaplist[GetParentIndex(index)] <heaplist[index])
+            while(index>0 && heaplist[GetParentIndex(index)]<heaplist[index])
             {
                 Swap(GetParentIndex(index), index);
                 index = GetParentIndex(index);
@@ -69,18 +70,15 @@ namespace Practices.Coding.Algorithms.Heap
             int maxindex = index;
             int leftchildindex = GetLeftChildIndex(index);
             int rightchildindex = GetRightChildIndex(index);
-
-            if(heaplist[leftchildindex]>heaplist[index] && leftchildindex<size)
+            
+            if( leftchildindex<=size && leftchildindex>=0 && heaplist[leftchildindex]>heaplist[index])
             {
                 maxindex = leftchildindex;
             }
 
-            if(maxindex==index)
+            if (rightchildindex <= size && rightchildindex>=0 && heaplist[rightchildindex] > heaplist[maxindex] )
             {
-                if (heaplist[rightchildindex] > heaplist[index] && rightchildindex < size)
-                {
-                    maxindex = rightchildindex;
-                }
+                maxindex = rightchildindex;
             }
 
             if(maxindex!=index)
@@ -104,20 +102,30 @@ namespace Practices.Coding.Algorithms.Heap
             }
 
         }
+     
         public void Insert(int val)
         {
             size=size + 1;
             heaplist.Add(val);
-
+            Console.WriteLine($"Size: {size}");
             ShiftUp(size);
         }
 
         public int RemoveMax()
         {
+            if(size == 0)
+            {
+              var item= heaplist[0];
+              heaplist.RemoveAt(0);
+              return item;
+            }
+            
             int result = heaplist[0];
             heaplist[0] = heaplist[size];
+            heaplist.RemoveAt(size);
             size = size - 1;
             ShiftDown(0);
+            
             return result;
         }
 
