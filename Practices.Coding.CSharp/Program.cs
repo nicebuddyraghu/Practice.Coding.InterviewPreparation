@@ -1,6 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Practices.Coding.CSharp;
+using Practices.Coding.CSharp.CSharpVersion1;
 
+PassRefTypeValue.TestPassingClassByValue passRefTypeValue = new PassRefTypeValue.TestPassingClassByValue();
+passRefTypeValue.TestPassingClassExample();
+
+StaticClassExample2 staticClass = new StaticClassExample2();
 
 bool check = true;
 Console.WriteLine(check ? "Checked" : "Not Checked");

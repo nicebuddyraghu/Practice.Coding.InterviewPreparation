@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="CSharpVersion5\" />
     <Folder Include="CSharpVersion3\" />
-    <Folder Include="CSharpVersion11\" />
   </ItemGroup>
 
 </Project>
