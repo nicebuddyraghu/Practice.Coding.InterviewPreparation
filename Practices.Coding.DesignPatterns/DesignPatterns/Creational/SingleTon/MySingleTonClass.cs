@@ -22,7 +22,7 @@
         private MySingletonClass()
         {
         }
-
+        
         //uses a pattern known as double check locking
         public static MySingletonClass Instance
         {
